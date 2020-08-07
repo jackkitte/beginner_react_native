@@ -1,13 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Alert, Text, TextInput, View } from 'react-native';
 
-export default function App() {
+const App = () => {
+  const [value, setValue] = useState("Input text");
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <TextInput style={styles.textInput} value={value} onChangeText={text => setValue(text)} onSubmitEditing={() => Alert.alert(value)} />
       <StatusBar style="auto" />
-    </View>
+    </View >
   );
 }
 
@@ -18,4 +20,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  textInput: {
+    width: 200,
+    borderColor: "black",
+    borderWidth: 1
+  }
 });
+
+export default App;
