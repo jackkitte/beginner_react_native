@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Alert, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Alert, Button, TextInput, View } from 'react-native';
 
 const App = () => {
   const [value, setValue] = useState("Input text");
@@ -8,6 +8,9 @@ const App = () => {
   return (
     <View style={styles.container}>
       <TextInput style={styles.textInput} value={value} onChangeText={text => setValue(text)} onSubmitEditing={() => Alert.alert(value)} />
+      <Button onPress={() => alert("onPress")} title="ボタンA" />
+      <Button onPress={() => alert("onPress")} title="ボタンB" color="red" />
+      <Button onPress={() => alert("onPress")} title="ボタンC" disabled={true} />
       <StatusBar style="auto" />
     </View >
   );
