@@ -5,8 +5,8 @@ import { StyleSheet, View } from 'react-native';
 const App = () => {
 
   return (
-    <View style={{ flex: 1 }}>
-      <View style={{ ...styles.container, justifyContent: "space-around" }}>
+    <View>
+      <View style={{ ...styles.container, alignItems: "center" }}>
         <View style={{ ...styles.item, backgroundColor: "red" }} />
         <View style={{ ...styles.item, backgroundColor: "yellow" }} />
         <View style={{ ...styles.item, backgroundColor: "green" }} />
