@@ -6,9 +6,26 @@ const App = () => {
 
   return (
     <View style={{ flex: 1 }}>
-      <View style={{ flex: 1, backgroundColor: "red" }} />
-      <View style={{ flex: 2, backgroundColor: "yellow" }} />
-      <View style={{ flex: 3, backgroundColor: "green" }} />
+      <View style={{ flex: 1, flexDirection: "column" }}>
+        <View style={{ width: 50, height: 50, backgroundColor: "red" }} />
+        <View style={{ width: 50, height: 50, backgroundColor: "yellow" }} />
+        <View style={{ width: 50, height: 50, backgroundColor: "green" }} />
+      </View>
+      <View style={{ flex: 1, flexDirection: "row" }}>
+        <View style={{ width: 50, height: 50, backgroundColor: "red" }} />
+        <View style={{ width: 50, height: 50, backgroundColor: "yellow" }} />
+        <View style={{ width: 50, height: 50, backgroundColor: "green" }} />
+      </View>
+      <View style={{ flex: 1, flexDirection: "column-reverse" }}>
+        <View style={{ width: 50, height: 50, backgroundColor: "red" }} />
+        <View style={{ width: 50, height: 50, backgroundColor: "yellow" }} />
+        <View style={{ width: 50, height: 50, backgroundColor: "green" }} />
+      </View>
+      <View style={{ flex: 1, flexDirection: "row-reverse" }}>
+        <View style={{ width: 50, height: 50, backgroundColor: "red" }} />
+        <View style={{ width: 50, height: 50, backgroundColor: "yellow" }} />
+        <View style={{ width: 50, height: 50, backgroundColor: "green" }} />
+      </View>
     </View>
   );
 }
