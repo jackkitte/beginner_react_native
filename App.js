@@ -6,25 +6,10 @@ const App = () => {
 
   return (
     <View style={{ flex: 1 }}>
-      <View style={{ flex: 1, flexDirection: "column" }}>
-        <View style={{ width: 50, height: 50, backgroundColor: "red" }} />
-        <View style={{ width: 50, height: 50, backgroundColor: "yellow" }} />
-        <View style={{ width: 50, height: 50, backgroundColor: "green" }} />
-      </View>
-      <View style={{ flex: 1, flexDirection: "row" }}>
-        <View style={{ width: 50, height: 50, backgroundColor: "red" }} />
-        <View style={{ width: 50, height: 50, backgroundColor: "yellow" }} />
-        <View style={{ width: 50, height: 50, backgroundColor: "green" }} />
-      </View>
-      <View style={{ flex: 1, flexDirection: "column-reverse" }}>
-        <View style={{ width: 50, height: 50, backgroundColor: "red" }} />
-        <View style={{ width: 50, height: 50, backgroundColor: "yellow" }} />
-        <View style={{ width: 50, height: 50, backgroundColor: "green" }} />
-      </View>
-      <View style={{ flex: 1, flexDirection: "row-reverse" }}>
-        <View style={{ width: 50, height: 50, backgroundColor: "red" }} />
-        <View style={{ width: 50, height: 50, backgroundColor: "yellow" }} />
-        <View style={{ width: 50, height: 50, backgroundColor: "green" }} />
+      <View style={{ ...styles.container, justifyContent: "space-around" }}>
+        <View style={{ ...styles.item, backgroundColor: "red" }} />
+        <View style={{ ...styles.item, backgroundColor: "yellow" }} />
+        <View style={{ ...styles.item, backgroundColor: "green" }} />
       </View>
     </View>
   );
@@ -33,10 +18,12 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "column"
   },
+  item: {
+    width: 50,
+    height: 50
+  }
 });
 
 export default App;
