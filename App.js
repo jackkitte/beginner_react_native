@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Alert, Button, Text, TextInput, View } from 'react-native';
+import { ScrollView, StyleSheet, Alert, Button, Text, TextInput, View } from 'react-native';
 import { TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback } from 'react-native';
 
 const App = () => {
@@ -14,38 +14,52 @@ const App = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <TextInput style={styles.textInput} value={value} onChangeText={text => setValue(text)} onSubmitEditing={() => Alert.alert(value)} />
-      <Button onPress={() => alert("onPress")} title="ボタンA" />
-      <Button onPress={() => alert("onPress")} title="ボタンB" color="red" />
-      <Button onPress={() => alert("onPress")} title="ボタンC" disabled={true} />
-      <TouchableHighlight onPress={onPressButton} underlayColor="white">
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>TouchableHighlight</Text>
-        </View>
-      </TouchableHighlight>
-      <TouchableOpacity onPress={onPressButton}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>TouchableOpacity</Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableNativeFeedback onPress={onPressButton} background={TouchableNativeFeedback.SelectableBackground()}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>TouchableNativeFeedback (Android only)</Text>
-        </View>
-      </TouchableNativeFeedback>
-      <TouchableWithoutFeedback onPress={onPressButton}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>TouchableWithoutFeedback</Text>
-        </View>
-      </TouchableWithoutFeedback>
-      <TouchableHighlight onPress={onPressButton} onLongPress={onLongPressButton} underlayColor="white">
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>Touchable with Long Press</Text>
-        </View>
-      </TouchableHighlight>
-      <StatusBar style="auto" />
-    </View >
+    <ScrollView pagingEnabled={true}>
+      <View style={styles.container}>
+        <TextInput style={styles.textInput} value={value} onChangeText={text => setValue(text)} onSubmitEditing={() => Alert.alert(value)} />
+        <Button onPress={() => alert("onPress")} title="ボタンA" />
+        <Button onPress={() => alert("onPress")} title="ボタンB" color="red" />
+        <Button onPress={() => alert("onPress")} title="ボタンC" disabled={true} />
+        <TouchableHighlight onPress={onPressButton} underlayColor="white">
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>TouchableHighlight</Text>
+          </View>
+        </TouchableHighlight>
+        <Button onPress={() => alert("onPress")} title="ボタンA" />
+        <Button onPress={() => alert("onPress")} title="ボタンB" color="red" />
+        <Button onPress={() => alert("onPress")} title="ボタンC" disabled={true} />
+        <TouchableOpacity onPress={onPressButton}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>TouchableOpacity</Text>
+          </View>
+        </TouchableOpacity>
+        <Button onPress={() => alert("onPress")} title="ボタンA" />
+        <Button onPress={() => alert("onPress")} title="ボタンB" color="red" />
+        <Button onPress={() => alert("onPress")} title="ボタンC" disabled={true} />
+        <TouchableNativeFeedback onPress={onPressButton} background={TouchableNativeFeedback.SelectableBackground()}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>TouchableNativeFeedback (Android only)</Text>
+          </View>
+        </TouchableNativeFeedback>
+        <Button onPress={() => alert("onPress")} title="ボタンA" />
+        <Button onPress={() => alert("onPress")} title="ボタンB" color="red" />
+        <Button onPress={() => alert("onPress")} title="ボタンC" disabled={true} />
+        <TouchableWithoutFeedback onPress={onPressButton}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>TouchableWithoutFeedback</Text>
+          </View>
+        </TouchableWithoutFeedback>
+        <Button onPress={() => alert("onPress")} title="ボタンA" />
+        <Button onPress={() => alert("onPress")} title="ボタンB" color="red" />
+        <Button onPress={() => alert("onPress")} title="ボタンC" disabled={true} />
+        <TouchableHighlight onPress={onPressButton} onLongPress={onLongPressButton} underlayColor="white">
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Touchable with Long Press</Text>
+          </View>
+        </TouchableHighlight>
+        <StatusBar style="auto" />
+      </View>
+    </ScrollView>
   );
 }
 
