@@ -1,29 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const App = () => {
-
+const HomeScreen = (props) => {
   return (
-    <View>
-      <View style={{ ...styles.container, alignItems: "center" }}>
-        <View style={{ ...styles.item, backgroundColor: "red" }} />
-        <View style={{ ...styles.item, backgroundColor: "yellow" }} />
-        <View style={{ ...styles.item, backgroundColor: "green" }} />
-      </View>
-    </View>
+    <Button title="詳細画面へ" onPress={() => props.navigation.navigate("Detail")} />
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column"
-  },
-  item: {
-    width: 50,
-    height: 50
-  }
-});
+const DetailScreen = (props) => {
+  return (
+    <Button title="一覧画面へ" onPress={() => props.navigation.goBack()} />
+  );
+}
+
+const Stack = createStackNavigator();
+
+const App = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Detail" component={DetailScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+};
 
 export default App;
