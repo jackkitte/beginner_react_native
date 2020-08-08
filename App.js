@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const HomeScreen = (props) => {
   return (
@@ -15,15 +19,13 @@ const DetailScreen = (props) => {
   );
 }
 
-const Stack = createStackNavigator();
-
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{ title: "一覧" }} />
-        <Stack.Screen name="Detail" component={DetailScreen} options={{ title: "詳細" }} />
-      </Stack.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} options={{ title: "一覧" }} />
+        <Tab.Screen name="Detail" component={DetailScreen} options={{ title: "詳細" }} />
+      </Tab.Navigator>
     </NavigationContainer>
   )
 };
